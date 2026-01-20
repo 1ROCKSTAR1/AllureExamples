@@ -13,6 +13,7 @@ public class OverviewPage {
     private SelenideElement shipInfo = $x("//div[contains(text(),'Shipping Information')]");
     private SelenideElement price = $x("//div[contains(text(),'Price Total')]");
     private SelenideElement finishButton = $x("//button[@data-test='finish'][@name='finish']");
+    private SelenideElement checkoutOverviewHeader = $x("//span[@class='title'][contains(text(),'Checkout: Overview')]");
 
     @Step("Verify checkout title")
     public OverviewPage checkoutTitleCheck() {
@@ -42,5 +43,10 @@ public class OverviewPage {
     public CompletePage finishButtonClick() {
         finishButton.click();
         return new CompletePage();
+    }
+
+    @Step("Check overview header")
+    public String getCheckoutHeaderPresence() {
+        return checkoutOverviewHeader.shouldBe(visible).getText();
     }
 }
