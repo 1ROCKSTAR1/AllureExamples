@@ -7,7 +7,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class GoodsPage {
 
-    // Элементы страницы
     private SelenideElement bikeLightItem = $x("//div[contains(@class,'inventory_item_name')][contains(text(),'Sauce Labs Bike Light')]");
     private SelenideElement backPackItem = $x("//div[contains(@class,'inventory_item_name')][contains(text(),'Sauce Labs Backpack')]");
     private SelenideElement boltShirtItem = $x("//div[contains(@class,'inventory_item_name')][contains(text(),'Sauce Labs Bolt T-Shirt')]");
@@ -16,7 +15,6 @@ public class GoodsPage {
     private SelenideElement hoodyItem = $x("//div[contains(@class,'inventory_item_name')][contains(text(),'T-Shirt (Red)')]");
     private SelenideElement afterLoginHeader = $x("//div[@class='app_logo']");
 
-    // Методы навигации
     @Step("Go to the Bikelight page")
     public BikeLightPage clickOnBikeLight() {
         bikeLightItem.click();
@@ -53,7 +51,6 @@ public class GoodsPage {
         return new HoodyPage();
     }
 
-    // Геттеры для текстов элементов
     public String getBikeLightItem() {
         return bikeLightItem.getText();
     }
