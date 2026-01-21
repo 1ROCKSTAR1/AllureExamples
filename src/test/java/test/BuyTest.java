@@ -1,12 +1,13 @@
 package test;
 
+import base.BaseTest;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page.AutorizationPage;
 
-public class BuyTest {
+public class BuyTest extends BaseTest {
 
     @Epic(value = "E2E tests")
     @Feature(value = "Buying an item")
