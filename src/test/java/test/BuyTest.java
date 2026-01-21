@@ -2,6 +2,7 @@ package test;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page.AutorizationPage;
 
@@ -11,6 +12,7 @@ public class BuyTest {
     @Feature(value = "Buying an item")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Buying an item. From an autorization to an order. NEGATIVE.")
+    @DisplayName("E2E buying an item.Negative")
     @Test
     public void buyBackPackTest() {
 
@@ -40,6 +42,7 @@ public class BuyTest {
     @Feature(value = "Buying an item")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Buying an item. From an autorization to an order.")
+    @DisplayName("E2E buying an item")
     @Test
     public void buyBikeLightTest() {
 

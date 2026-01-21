@@ -3,6 +3,7 @@ package test;
 import base.BaseTest;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page.AutorizationPage;
 
@@ -12,6 +13,7 @@ public class AllGoodsPageTest extends BaseTest {
     @Feature(value = "Main page Headers")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Checks aviability of the Bike Light + the correctness of the description of this product.")
+    @DisplayName("Bike Light Test")
     @Test
     public void bikeLightHeaderTextTest() {
         String itemText = new AutorizationPage()
@@ -27,6 +29,7 @@ public class AllGoodsPageTest extends BaseTest {
     @Feature(value = "Main page Headers")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Checks aviability of the Backpack + the correctness of the description of this product.")
+    @DisplayName("Backpack Test")
     @Test
     public void backPackHeaderTextTest() {
         String itemText = new AutorizationPage()
@@ -42,6 +45,7 @@ public class AllGoodsPageTest extends BaseTest {
     @Feature(value = "Main page Headers")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Checks aviability of the T-Shirt + the correctness of the description of this product.")
+    @DisplayName("T-Shirt test")
     @Test
     public void boltTshirtHeaderTextTest() {
         String itemText = new AutorizationPage()
@@ -57,6 +61,7 @@ public class AllGoodsPageTest extends BaseTest {
     @Feature(value = "Main page Headers")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Checks aviability of the Fleece jacket + the correctness of the description of this product.")
+    @DisplayName("Fleece jacket test")
     @Test
     public void fleeceJacketHeaderTextTest() {
         String itemText = new AutorizationPage()
@@ -72,6 +77,7 @@ public class AllGoodsPageTest extends BaseTest {
     @Feature(value = "Main page Headers")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Checks aviability of the Onesie + the correctness of the description of this product.")
+    @DisplayName("Onesie test")
     @Test
     public void whiteShirtHeaderTextTest() {
         String itemText = new AutorizationPage()
@@ -87,6 +93,7 @@ public class AllGoodsPageTest extends BaseTest {
     @Feature(value = "Main page Headers")
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Checks aviability of the T-Shirt RED + the correctness of the description of this product.")
+    @DisplayName("T-shirt RED test")
     @Test
     public void hoodyHeaderTextTest() {
         String itemText = new AutorizationPage()

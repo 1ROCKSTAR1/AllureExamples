@@ -17,7 +17,7 @@ public class DataProviderTest extends BaseTest {
     @Story(value = "Проверки полей страницы заполнения данных юзера")
     @Severity(value = SeverityLevel.NORMAL)
     @Description(value = "Проверка поля NAME на граничные значения и спецсимволы ....")
-    @ParameterizedTest
+    @ParameterizedTest(name = "Checking the field 'name' with the value {0}")
     public void theFirstDataProviderTest(String option) throws NoSuchElementException {
 
         String checkoutTitle = new AutorizationPage()
@@ -43,7 +43,7 @@ public class DataProviderTest extends BaseTest {
     @Story(value = "Проверки полей страницы заполнения данных юзера")
     @Severity(value = SeverityLevel.NORMAL)
     @Description(value = "Проверка поля LASTNAME на граничные значения и спецсимволы ....")
-    @ParameterizedTest
+    @ParameterizedTest(name = "Checking the field 'last name' with the value {0}")
     public void theFirstDataProviderTest2(String option) throws NoSuchElementException {
 
         String checkoutTitle = new AutorizationPage()
@@ -69,7 +69,7 @@ public class DataProviderTest extends BaseTest {
     @Story(value = "Проверки полей страницы заполнения данных юзера")
     @Severity(value = SeverityLevel.NORMAL)
     @Description(value = "Проверка поля POSTCODE на граничные значения и спецсимволы ....")
-    @ParameterizedTest
+    @ParameterizedTest(name = "Checking the field 'postcode' with the value {0}")
     public void theFirstDataProviderTest3(String option) throws NoSuchElementException {
 
         String checkoutTitle = new AutorizationPage()
