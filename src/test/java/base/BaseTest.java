@@ -1,12 +1,15 @@
 package base;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -14,29 +17,34 @@ public class BaseTest {
 
     private static final String BASE_URL = "https://www.saucedemo.com/";
 
-    @BeforeEach()
-    protected void beforeMethod() {
+    @BeforeAll
+    static void beforeAll() {
+        //Configuration.baseUrl = System.getProperty("baseUrl","https://demoqa.com");
+        Configuration.browser = System.getProperty("browser","chrome");
+        Configuration.browserSize = System.getProperty("resolution","1920x1080");
+        Configuration.browserVersion = System.getProperty("browserVersion","127.0");
+        Configuration.timeout = 10000;
+        Configuration.remote = System.getProperty("remoteDriverUrl","https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
-        Configuration.browser = "chrome";
-        Configuration.headless = false;
-        Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 18000;
-        Configuration.screenshots = true;
-        Configuration.savePageSource = false;
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        Configuration.browserCapabilities = capabilities;
+    }
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
-        Configuration.browserCapabilities = options;
-
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-                .screenshots(true)
-                .savePageSource(false));
-
+    @BeforeEach
+    void beforeSingle() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         open(BASE_URL);
     }
 
-    @AfterEach()
-    protected void afterMethod() {
-        Selenide.closeWebDriver();
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
     }
 }
