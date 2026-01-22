@@ -11,10 +11,13 @@ public class BikeLightPage {
     private SelenideElement bikeLightDesc = $x("//div[contains(@class,'inventory_details_desc large_size')][contains(text(),'when riding your bike at night')]");
     private SelenideElement addToCartButton = $x("//button[@data-test='add-to-cart']");
     private SelenideElement backBikeLightCartIcon = $x("//a[@class='shopping_cart_link']");
+
+    @Step("Getting bikelight's item name")
     public String getBikeLightItem() {
         return bikeLightItem.getText();
     }
 
+    @Step("Getting bikelight's item name")
     public String getBikeLightDesc() {
         return bikeLightDesc.getText();
     }

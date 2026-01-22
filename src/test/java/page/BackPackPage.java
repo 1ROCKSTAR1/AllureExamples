@@ -16,10 +16,12 @@ public class BackPackPage {
     public BackPackPage() {
     }
 
+    @Step("Getting backpack's item name")
     public String getBackPackItem() {
         return backPackItem.getText();
     }
 
+    @Step("Getting backpack's item description")
     public String getBackPackDesc() {
         return backPackDesc.getText();
     }

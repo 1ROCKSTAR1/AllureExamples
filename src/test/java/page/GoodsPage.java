@@ -51,30 +51,37 @@ public class GoodsPage {
         return new HoodyPage();
     }
 
+    @Step("Getting bikelight's item name")
     public String getBikeLightItem() {
         return bikeLightItem.getText();
     }
 
+    @Step("Getting backpack's item name")
     public String getBackPackItem() {
         return backPackItem.getText();
     }
 
+    @Step("Getting bolt's item name")
     public String getBoltShirtItem() {
         return boltShirtItem.getText();
     }
 
+    @Step("Getting fleeceJacket's item name")
     public String getFleeceJacketItem() {
         return fleeceJacketItem.getText();
     }
 
+    @Step("Getting whiteShirt's item name")
     public String getWhiteShirtItem() {
         return whiteShirtItem.getText();
     }
 
+    @Step("Getting hoody's item name")
     public String getHoodyItem() {
         return hoodyItem.getText();
     }
 
+    @Step("Getting loginHeader's text")
     public String getAfterLoginHeaderString() {
         return afterLoginHeader.getText();
     }
